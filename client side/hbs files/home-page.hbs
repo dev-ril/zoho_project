@@ -1,0 +1,40 @@
+<div class="jumbo">
+    <div>
+        <p class="header">Cricket Commentary Page</p>
+        <div>
+            <div style="margin-left: 1400px;margin-top: 70px;" id="button" class="button" {{action this.goHome}}>Go to
+                Home page</div>
+            <div style="margin-left: 100px;margin-top: 100px;" class="button" {{action this.logOut}}>Log Out</div>
+        </div>
+    </div>
+    <br>
+    {{#if this.variables.matchstatus}}
+    <table>
+        <tr>
+            <div class="flex-container">
+                <div>
+                    {{body/team-details}}
+                </div>
+                <div>
+                    {{body/batsman-details}}
+                </div>
+                <div>
+                    {{body/score-details}}
+                </div>
+            </div>
+        </tr>
+    </table>
+    {{else}}
+    <div style="margin-left: 800px;margin-top: 100px;">
+        <h1>Match Ended</h1>
+        <br>
+        <div>
+            <h3>Winning Team: {{this.variables.winningTeam}}</h3>
+            <h3>Runs scored: {{this.variables.score}}</h3>
+            <h3>Wickets gone: {{this.variables.wicketsGone}}</h3>
+        </div>
+        <br>
+        <h4>Press Go to Home Page</h4>
+    </div>
+    {{/if}}
+</div>

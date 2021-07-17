@@ -1,0 +1,41 @@
+<div>
+  <div class="customAlert1" id="myDiv1">
+    <img src="https://media.giphy.com/media/KGYSVliFPiRR0g5YuQ/giphy.gif" style="width: 100px; height: 100px;">
+  </div>
+  <div class="customAlert2" id="myDiv2"> 
+    <img src="https://media.giphy.com/media/KGYSVliFPiRR0g5YuQ/giphy.gif" style="width: 100px; height: 100px;">
+  </div>
+  <div class="customAlert3" id="myDiv3">
+    <img src="https://media.giphy.com/media/KGYSVliFPiRR0g5YuQ/giphy.gif" style="width: 100px; height: 100px;">
+  </div>
+  <div class="customAlert4" id="myDiv4">
+    <img src="https://media.giphy.com/media/KGYSVliFPiRR0g5YuQ/giphy.gif" style="width: 100px; height: 100px;">
+  </div>
+</div>
+
+<script type="text/javascript">
+
+  (function(){
+    var myDiv1 = document.getElementById("myDiv1")
+    var myDiv2 = document.getElementById("myDiv2")
+    var myDiv3 = document.getElementById("myDiv3")
+    var myDiv4 = document.getElementById("myDiv4"),
+
+      show = function(){
+        myDiv1.style.display = "block";
+        myDiv2.style.display = "block";
+        myDiv3.style.display = "block";
+        myDiv4.style.display = "block";
+        setTimeout(hide, 2000);
+      },
+
+      hide = function(){
+        myDiv1.style.display = "none";
+        myDiv2.style.display = "none";
+        myDiv3.style.display = "none";
+        myDiv4.style.display = "none";
+      };
+    show();
+  })();
+
+</script>

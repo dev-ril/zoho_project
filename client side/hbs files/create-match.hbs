@@ -1,0 +1,23 @@
+<div>
+  <div style="margin-left: 100px;margin-top: 100px;" class="button" {{action this.showHistory}}>Match History</div>
+      <div style="margin-left: 500px;margin-top: 100px;" class="button" {{action this.createMatch}}>Create Match</div>
+  <div style="margin-left: 650px;margin-top: 100px;" class="button" {{action this.logOut}}>Log Out</div>
+</div>
+
+<br>
+<div style="margin-left: 740px;margin-top: 100px;">
+  <label>Enter Target Score:</label>
+  <div style="margin-top: 10px;">
+    {{input value=targetscore}}
+  </div>
+  <br>
+  <label>Enter number of overs:</label>
+  <div style="margin-top: 10px;">
+    {{input value=overs}}
+  </div>
+</div>
+<div style="margin-left: 785px;margin-top: 100px;" class="button" {{on "click" (fn this.startMatch targetscore overs)}}>
+  Start</div>
+
+
+

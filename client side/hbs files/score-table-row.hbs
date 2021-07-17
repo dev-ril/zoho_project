@@ -1,0 +1,35 @@
+{{#each this.variables.overlist as |o|}}
+<tr>
+  
+{{#if o}}
+  <td>Over {{o}}</td>
+  {{#each this.variables.b as |ball|}}
+  <td>{{ball}}</td>
+  {{/each}}
+
+  {{#each this.variables.t as |total|}}
+  <td>{{this.variables.finalTotal}}</td>
+  {{/each}}
+
+{{else}}
+  {{#each this.variables.xx as |xx|}}
+      <td>Over {{xx}}</td>
+  {{/each}}
+
+  {{#each this.variables.bb as |ball|}}
+  <td>{{ball}}</td>
+  {{/each}}
+
+  {{#each this.variables.tt as |total|}}
+  <td>{{total}}</td>
+  {{/each}}
+  
+{{/if}}
+</tr>
+
+
+{{/each}}
+
+{{!-- {{#each this.variables.e as |extras|}}
+<td>{{extras}}</td>
+{{/each}} --}}

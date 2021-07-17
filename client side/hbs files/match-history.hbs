@@ -1,0 +1,46 @@
+<div>
+  <div style="margin-left: 100px;margin-top: 100px;" class="button">Match History</div>
+  <div style="margin-left: 500px;margin-top: 100px;" class="button" {{action this.createMatch}}>Create Match</div>
+  <div style="margin-left: 650px;margin-top: 100px;" class="button" {{action this.logOut}}>Log Out</div>
+
+  {{#if this.variables.shistory}}
+  <h3 style="margin-left: 230px;margin-top: 75px;">Matches Created:</h3>
+  <table class="scoreTable" border="1"
+    style="border-spacing: 3px;border-radius:5px;margin-left: 430px;margin-top: 2 0px;">
+    <tr>
+      <th>Total Runs Needed</th>
+      <th>Total Overs</th>
+      <th>Match Played At</th>
+    </tr>
+    {{#each this.variables.pages as |p|}}
+    <tr>
+      <td>{{p.[1]}}</td>
+      <td>{{p.[2]}}</td>
+      <td>{{p.[0]}}</td>
+    </tr>
+    {{/each}}
+  </table>
+  <div class="scoreEditor" style="margin-left: 430px;margin-top: 20px;">Total Count: {{this.variables.totalCount}}</div>
+  <div style="margin-left: 430px;margin-top: 20px;">
+    {{#each this.variables.noOfPages as |pages|}}
+      <div class="button" {{action this.paginate pages}}>{{pages}}</div>
+    {{/each}}
+  </div>
+
+  {{/if}}
+
+  <div>
+    <select onchange={{action 'setNoOfRecords' value="target.value" }} class="button"
+      style="margin-left:300px;margin-top:5px;width: 300px;">
+      <option value=5 selected="hidden">No of Records Per Page</option>
+      {{#each this.variables.noOfRecords as |r|}}
+      <option value={{r}}>
+        {{r}} Records Per Page
+      </option>
+      {{/each}}
+    </select>
+    <div style="margin-left: 250px;margin-top: 100px;" class="button" {{action this.showHistory}}>Show History</div>
+    <div style="margin-left:300px;margin-top: 100px;" class="button" {{action this.clearHistory}}>Clear History</div>
+  </div>
+
+</div>

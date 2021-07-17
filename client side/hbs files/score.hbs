@@ -1,0 +1,64 @@
+<table style="width: 1100px;">
+    <tr>
+        <th>
+            <h4 class="scoreEditor">Ball Editor</h4>
+            <br>
+            <div>
+                <button class="score-button" {{action 'checkBall' 'c' }}>C</button>
+                <button class="score-button" {{action 'checkBall' 'n' }}>N</button>
+                <button class="score-button" {{action 'checkBall' 'w' }}>W</button>
+            </div>
+        </th>
+        <th>
+            <h4 class="scoreEditor">Score Editor</h4>
+            <br>
+            <div>
+                <button class="score-button" {{action 'runs' 0 }}>.</button>
+                <button class="score-button" {{action 'runs' 1}}>1</button>
+                <button class="score-button" {{action 'runs' 2}}>2</button>
+                <button class="score-button" {{action 'runs' 3}}>3</button>
+                <button class="score-button" {{action 'runs' 4}}>4</button>
+                <button class="score-button" {{action 'runs' 5}}>5</button>
+                <button class="score-button" {{action 'runs' 6}}>6</button>
+                <button class="score-button" {{action 'runs' 'out' }}>Out</button>
+            </div>
+        </th>
+        <th>
+            <h3 class="scoreEditor">Batsman 1</h3>
+            <br>
+            <select onchange={{action 'selectBatsman1' value="target.value" }} class="button" style="width: 250px;">
+                <option value={{this.variables.currentBatsman1}} selected="hidden">Select</option>
+                {{#each this.variables.batsmanList as |batsman1|}}
+                <option value={{batsman1}}>
+                    {{batsman1}}
+                </option>
+                {{/each}} 
+            </select>
+        </th>
+        <th>
+            <h3 class="scoreEditor">Batsman 2</h3>
+            <br>
+            <select onchange={{action 'selectBatsman2' value="target.value" }} class="button" style="width: 250px;">
+                <option value={{this.variables.currentBatsman1}} selected="hidden">Select</option>
+                {{#each this.variables.batsmanList as |batsman2|}}
+                <option value={{batsman2}}>
+                    {{batsman2}}
+                </option>
+                {{/each}}
+            </select>
+        </th>
+    </tr>
+</table>
+<br><br>
+
+{{#if this.variables.isBoundary4}}
+<FourAlert />
+{{/if}}
+
+{{#if this.variables.isBoundary6}}
+<SixAlert />
+{{/if}}
+
+{{#if this.variables.isBoundary}}
+<Alert />
+{{/if}}

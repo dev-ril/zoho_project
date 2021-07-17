@@ -1,0 +1,15 @@
+<div class="loginPage">
+<h1 style="margin-left: 40px;">Register</h1>
+<br><br>
+ <label>Enter username</label>
+<div style="margin-top: 10px;">
+  {{input value=userName}}
+</div>
+<br>
+ <label>Enter password</label>
+<div style="margin-top: 10px;">
+  {{input value=password}}
+</div>
+<br><br>
+<div style="margin-left: 40px;" class="button" {{on "click" (fn this.register userName password)}}>Submit</div>
+</div>
